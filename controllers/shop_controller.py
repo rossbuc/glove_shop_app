@@ -8,3 +8,12 @@ gloves_blueprint = Blueprint("gloves", __name__)
 def gloves():
     gloves = Glove.query.all()
     return render_template("gloves.jinja", gloves=gloves)
+
+@gloves_blueprint.route("/gloves/<id>")
+def get_glove(id):
+    glove = Glove.query.get(id)
+    gloves = Glove.query.all()
+    if glove in gloves:
+        return render_template("show_glove.jinja", glove=glove)
+    else:
+        return "This glove doesnt exist!"
