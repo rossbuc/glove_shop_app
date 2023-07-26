@@ -17,3 +17,19 @@ def get_glove(id):
         return render_template("show_glove.jinja", glove=glove)
     else:
         return "This glove doesnt exist!"
+    
+@gloves_blueprint.route("/gloves/new")
+def new_glove():
+    return render_template("new_glove.jinja")
+
+@gloves_blueprint.route("/gloves", methods=['POST'])
+def add_glove():
+    size = request.form['size']
+    colour = request.form['colour']
+    price = request.form['price']
+
+    glove = Glove(size=size, colour=colour, price=price)
+    
+    db.session.add(glove)
+    db.session.commit()
+    return redirect("/gloves")

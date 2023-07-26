@@ -1,0 +1,15 @@
+{% extends 'base.jinja' %} {% block content %}
+    <form action="/gloves" method="POST">
+        <label for="size">Size</label>
+        <select name="size" id="size">
+            <option value="S">Small</option>
+            <option value="M">Medium</option>
+            <option value="L">Large</option>
+        </select>
+        <label for="colour">Colour</label>
+        <input type="text" name="colour" id="colour">
+        <label for="price">Price</label>
+        <input type="number" name="price" id="price">
+        <button type="submit">Add Glove</button>
+    </form>
+{% endblock %}
