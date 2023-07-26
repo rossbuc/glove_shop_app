@@ -53,3 +53,12 @@ def update_glove(id):
 
     db.session.commit()
     return redirect("/gloves")
+
+@gloves_blueprint.route("/gloves/<id>/delete")
+def delete_glove(id):
+    glove = Glove.query.get(id)
+
+    db.session.delete(glove)
+    db.session.commit()
+
+    return redirect("/gloves")

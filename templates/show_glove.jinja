@@ -4,5 +4,7 @@
     <h3>The size is {{ glove.size }}</h3>
     <h3>The color is {{ glove.colour }}</h3>
     <h3>The price of this glove {{ glove.price }}</h3>
+    <a href="/gloves/{{ glove.id }}/edit">Edit</a>
+    <a href="/gloves/{{ glove.id }}/delete" method="POST">Delete</a>
 
 {% endblock  %}
