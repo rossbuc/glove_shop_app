@@ -1,0 +1,16 @@
+{% extends 'base.jinja' %} {% block content %}
+    <h3>Edit Glove</h3>
+    <form action="/gloves/{{ glove.id }}" method="POST">
+        <label for="size">Size</label>
+        <select name="size" id="size" value="{{ glove.size }}">
+            <option value="S">Small</option>
+            <option value="M">Medium</option>
+            <option value="L">Large</option>
+        </select>
+        <label for="colour">Colour</label>
+        <input type="text" name="colour" id="colour" value="{{ glove.colour }}">
+        <label for="price">Price</label>
+        <input type="number" name="price" id="price" value="{{ glove.price }}">
+        <button type="submit">Edit Glove</button>
+    </form>
+{% endblock %}
