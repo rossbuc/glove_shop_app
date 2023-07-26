@@ -4,6 +4,10 @@ from models import Glove, Customer
 
 gloves_blueprint = Blueprint("gloves", __name__)
 
+@gloves_blueprint.route("/index")
+def index():
+    return render_template("index.jinja")
+
 @gloves_blueprint.route("/gloves")
 def gloves():
     gloves = Glove.query.all()
@@ -62,3 +66,4 @@ def delete_glove(id):
     db.session.commit()
 
     return redirect("/gloves")
+
