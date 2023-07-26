@@ -1,15 +1,17 @@
 {% extends "base.jinja" %} {% block content %}
     
-    <ul>
+    <ul class="gloves_list">
     {% for glove in gloves %}
-        <li>{{ glove.id }} 
-        {{ glove.size }}
-        {{ glove.colour }}
-        {{ glove.price }}
-        {% if glove.customer_id == None %}
-            &#10004;
+        <li>ID: {{ glove.id }} <br>
+        Glove Size: {{ glove.size }} <br>
+        Colour: {{ glove.colour }} <br>
+        Price: {{ glove.price }} <br>
+        {% if glove.customer_id == Non %}
+            Available: &#10004; <br>
+        {% else %}
+            Not Available: &#10006; <br>
         {% endif %}
-        <a href="gloves/{{ glove.id }}">View Glove</a>
+        <a href="gloves/{{ glove.id }}">View Glove</a> <br>
         </li>
     {% endfor %}
     </ul>

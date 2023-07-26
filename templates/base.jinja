@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <title>Glove Shop</title>
 </head>
 <body>
-    
     <nav>
-        <ul>
+        <ul class="nav__bar">
             <li><a href="/index">Home</a></li>
             <li><a href="/gloves">Gloves</a></li>
             <li><a href="/gloves/new">Add Glove</a></li>
@@ -16,10 +19,12 @@
         </ul>
     </nav>
 
-    <div class="content">
-    {% block content %}
-        
-    {% endblock content %}
+    <div class="container">
+        <div class="content">
+        {% block content %}
+            
+        {% endblock content %}
+        </div>
     </div>
 </body>
 </html>

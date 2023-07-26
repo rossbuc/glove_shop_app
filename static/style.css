@@ -1,0 +1,98 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    list-style: none;
+}
+
+button, input[type="submit"] {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+button, input[type="submit"] {
+    padding: 3px 10px;
+    border: 1px solid black;
+    border-radius: 30%;
+    background-color: rgba(20, 105, 133, 0.74);
+    color: white;
+    font-weight: bold;
+}
+
+nav {
+    width: 100%;
+    background-color: rgba(95, 158, 160, 0.205);
+    height: 1.5rem;
+}
+
+.nav__bar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+}
+
+.nav__bar li {
+    height: 100%;
+    text-align: center;
+}
+
+a, .link__decoration {
+    text-decoration: none;
+}
+
+a:hover {
+    font-weight: bolder;
+}
+
+.link__decoration:hover {
+    font-weight: bolder;
+}
+
+button:hover {
+    background-color: beige;
+    color: rgba(20, 105, 133, 0.74);
+}
+
+input[type="submit"]:hover {
+    background-color: beige;
+    color: rgba(20, 105, 133, 0.74);
+}
+
+.gloves_list {
+    display: flex;
+    flex-flow: wrap row;
+    width: 100%;
+    gap: 30px;
+}
+
+.gloves_list li {
+    width: 30%;
+    display: flex;
+    flex-flow: wrap column;
+    gap: 4px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 1000px;
+    margin: 0 2rem;
+}
+
+.content {
+    width: 100%;
+    min-height: 65vh;
+    padding-top: 30px;
+}
+
+.glove_show {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 5px;
+}

@@ -1,11 +1,13 @@
 {% extends 'base.jinja' %} {% block content %}
-    
-    <h2>The glove ID is {{ glove.id }}</h2>
-    <h3>The size is {{ glove.size }}</h3>
-    <h3>The color is {{ glove.colour }}</h3>
-    <h3>The price of this glove {{ glove.price }}</h3>
-    <a href="/gloves/{{ glove.id }}/edit">Edit</a>
-    <a href="/gloves/{{ glove.id }}/delete" method="POST">Delete</a>
-    <h3>{{ customer.name }} has bought this</h3>
+    <div class="glove_show">
+        <h2>The glove ID is {{ glove.id }}</h2>
+        <h4>The size is {{ glove.size }}</h4>
+        <h4>The color is {{ glove.colour }}</h4>
+        <h4>The price of this glove {{ glove.price }}</h4>
+        <h4>{{ customer.name }} has bought this</h4>
+        <a class="link__decoration" href="/gloves/{{ glove.id }}/edit">Edit</a>
+        <a class="link__decoration" href="/gloves/{{ glove.id }}/delete" method="POST">Delete</a>
+        
+    </div>
 
 {% endblock  %}
