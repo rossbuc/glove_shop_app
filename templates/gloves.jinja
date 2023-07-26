@@ -1,0 +1,13 @@
+{% extends "base.jinja" %} {% block content %}
+    
+    <ul>
+    {% for glove in gloves %}
+        <li>{{ glove.id }} 
+        {{ glove.size }}
+        {{ glove.colour }}
+        {{ glove.price }}
+        </li>
+    {% endfor %}
+    </ul>
+
+{% endblock content %}
