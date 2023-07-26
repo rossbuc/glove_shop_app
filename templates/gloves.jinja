@@ -6,6 +6,9 @@
         {{ glove.size }}
         {{ glove.colour }}
         {{ glove.price }}
+        {% if glove.customer_id == None %}
+            &#10004;
+        {% endif %}
         <a href="gloves/{{ glove.id }}">View Glove</a>
         </li>
     {% endfor %}

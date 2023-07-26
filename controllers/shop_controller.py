@@ -54,10 +54,14 @@ def update_glove(id):
 
     glove = Glove.query.get(id)
 
+    print(type(customer_id))
     glove.size = size
     glove.colour = colour
     glove.price = price
-    glove.customer_id = customer_id
+    if len(customer_id) != 0:
+        glove.customer_id = customer_id
+    else:
+        glove.customer_id = None
 
     db.session.commit()
     return redirect("/gloves")
