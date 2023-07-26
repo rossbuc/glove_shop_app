@@ -1,0 +1,8 @@
+{% extends 'base.jinja' %} {% block content %}
+    <h2>New Customer Form</h2>
+    <form action="/customer" method="POST">
+        <label for="customer_name">Name of customer</label>
+        <input type="text" name="customer_name" id="customer_name" required>
+        <button type="submit">Add Customer</button>
+    </form>
+    {% endblock  %}

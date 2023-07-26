@@ -6,5 +6,6 @@
     <h3>The price of this glove {{ glove.price }}</h3>
     <a href="/gloves/{{ glove.id }}/edit">Edit</a>
     <a href="/gloves/{{ glove.id }}/delete" method="POST">Delete</a>
+    <h3>{{ customer.name }} has bought this</h3>
 
 {% endblock  %}

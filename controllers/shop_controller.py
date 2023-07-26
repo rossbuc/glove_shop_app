@@ -17,8 +17,9 @@ def gloves():
 def get_glove(id):
     glove = Glove.query.get(id)
     gloves = Glove.query.all()
+    customer = Customer.query.get(glove.customer_id)
     if glove in gloves:
-        return render_template("show_glove.jinja", glove=glove)
+        return render_template("show_glove.jinja", glove=glove, customer=customer)
     else:
         return "This glove doesnt exist!"
     
@@ -41,19 +42,22 @@ def add_glove():
 @gloves_blueprint.route("/gloves/<id>/edit")
 def edit_glove(id):
     glove = Glove.query.get(id)
-    return render_template("edit_glove.jinja", glove=glove)
+    customers = Customer.query.all()
+    return render_template("edit_glove.jinja", glove=glove, customers=customers)
 
 @gloves_blueprint.route("/gloves/<id>", methods=['POST'])
 def update_glove(id):
     size = request.form['size']
     colour = request.form['colour']
     price = request.form['price']
+    customer_id = request.form['customer_id']
 
     glove = Glove.query.get(id)
 
     glove.size = size
     glove.colour = colour
     glove.price = price
+    glove.customer_id = customer_id
 
     db.session.commit()
     return redirect("/gloves")
@@ -67,3 +71,16 @@ def delete_glove(id):
 
     return redirect("/gloves")
 
+@gloves_blueprint.route("/customer", methods=['POST'])
+def add_customer():
+    name = request.form['customer_name']
+
+    new_customer = Customer(name=name)
+
+    db.session.add(new_customer)
+    db.session.commit()
+    return redirect("/index")
+
+@gloves_blueprint.route("/customer/new")
+def new_customer():
+    return render_template("new_customer.jinja")

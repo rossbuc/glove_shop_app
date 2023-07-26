@@ -11,6 +11,13 @@
         <input type="text" name="colour" id="colour" value="{{ glove.colour }}">
         <label for="price">Price</label>
         <input type="number" name="price" id="price" value="{{ glove.price }}">
+        <label for="customer_id">Assign Customer ID</label>
+        <select name="customer_id" id="customer_id">
+            {% for customer in customers %}
+                <option value="{{ customer.id }}">{{ customer.name }}</option>
+            {% endfor %}
+        
+        </select>
         <button type="submit">Edit Glove</button>
     </form>
 {% endblock %}
